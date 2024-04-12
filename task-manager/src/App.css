@@ -7,6 +7,10 @@
   box-sizing: border-box;
 }
 
+App{
+  text-align: center;
+}
+
 body {
   background: #4b42f5;
   display: flex;
@@ -22,6 +26,7 @@ h1 {
   color: #fff;
   margin-bottom: 0.5rem;
   font-size: 1.75rem;
+  text-align: center;
 }
 
 .TodoWrapper {
@@ -34,6 +39,8 @@ h1 {
 .TodoForm {
   width: 100%;
   margin-bottom: 1rem;
+  /* margin: 0;
+  padding: 0 */
 }
 
 .todo-input {
@@ -41,7 +48,7 @@ h1 {
   background: none;
   border: 1px solid #8758ff;
   padding: 0.5rem 1rem;
-  margin-top: 1rem;
+  margin-top: 0rem;
   margin-bottom: 2rem;
   width: 300px;
   color: #fff;

@@ -21,6 +21,7 @@ export const TodoWrapper = () => {
 
   return (
     <div className = 'TodoWrapper'>
+      <h1 id = "mainTitle">Task Manager</h1>
      <TodoForm addTodo= {addTodo}/>
      {todos.map((todo, index) => (
       <Todo task = {todo} key = {index} toggleComplete={toggleComplete} />  
