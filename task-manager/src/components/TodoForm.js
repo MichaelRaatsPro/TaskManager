@@ -7,16 +7,18 @@ export const TodoForm = ({addTodo}) => {
 
     const [value,setValue] = useState("");
     const [priority, setPriority] = useState(1);
+    const [alertIsVisible, setAlertVisble] = useState(false); // State for alert visibility
 
     const handleSubmit = e => {
         e.preventDefault();
         
-        if (value !== ""){
+        if (value !== "" && priority !== undefined) {
           addTodo(value, priority);
           setValue("");
           setPriority(1);
+          setAlertVisble(false);
         }else{
-          <Alert variant="filled" severity="error">bruh</Alert>
+          setAlertVisble(true);
         }
 
     }
@@ -25,7 +27,7 @@ export const TodoForm = ({addTodo}) => {
     <>
     <img src = {header} style = {{width: '420px'}} />
     <form className = "TodoForm" onSubmit = {handleSubmit}>
-             
+          
           <input type = "textfield" 
            className = "todo-input" 
            placeholder= 'Write your tasks here... '
@@ -38,6 +40,7 @@ export const TodoForm = ({addTodo}) => {
            value = {priority}
            onChange = {(e) => setPriority(parseInt(e.target.value))} />
         <button type = "submit" className = "todo-btn">Add Task</button>
+        {alertIsVisible && <Alert variant="filled" severity="error">Please set name and priority for your task</Alert>}
     </form>
     </>
   )

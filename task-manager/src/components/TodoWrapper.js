@@ -7,7 +7,8 @@ uuidv4();
 
 export const TodoWrapper = () => {
     const [todos, setTodos] = useState([]);
-
+    const [deleting,setDeleting] = useState(false);
+    const [sorting,setSorting] = useState(false);
     const addTodo = (todo,priority) => {
         setTodos(todos => [...todos,{priority: priority, id: uuidv4(), task: todo, 
         completed: false, 
@@ -20,7 +21,9 @@ export const TodoWrapper = () => {
       
     }
     const deleteTodo = (id) => {
+      setDeleting(true);
       setTodos(todos.filter((todo)=> todo.id !== id));
+      setDeleting(false);
     }
 
     const editTodo = (id) => {
@@ -32,15 +35,21 @@ export const TodoWrapper = () => {
     }
 
     useEffect(() => {
-      sortTodos();
+      // console.log("useEffect triggered");
+      setSorting(true);
+      // console.log((!deleting && sorting))
+      if (!deleting && sorting){
+        sortTodos();
+        setSorting(false);
+      }
     }, [todos]);
 
     const sortTodos = () => {
       // sort function
-      console.log("sorting in progress...");
+      // console.log("sorting in progress...");
         const sortedTodos = [...todos];
         sortedTodos.sort((a,b) => a.priority - b.priority);
-        if (todos.length > 1){
+        if (todos.length > 0){
           setTodos(prevTodos => sortedTodos);
         }
   }
