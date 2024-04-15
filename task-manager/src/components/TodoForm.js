@@ -40,7 +40,7 @@ export const TodoForm = ({addTodo}) => {
            value = {priority}
            onChange = {(e) => setPriority(parseInt(e.target.value))} />
         <button type = "submit" className = "todo-btn">Add Task</button>
-        {alertIsVisible && <Alert variant="filled" severity="error">Please set name and priority for your task</Alert>}
+        {alertIsVisible && <Alert variant="filled" severity="error" style = {{backgroundColor: "#4b42f5"}}>Please set name and priority for your task </Alert>}
     </form>
     </>
   )

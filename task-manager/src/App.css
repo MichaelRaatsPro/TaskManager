@@ -12,7 +12,7 @@ App{
 }
 
 body {
-  background: lightgrey;
+  background: #124779;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -46,7 +46,7 @@ h1 {
 .todo-input {
   outline: none;
   background: none;
-  border: 1px solid #8758ff;
+  border: 1px solid #124779;
   padding: 0.5rem 1rem;
   margin-top: 0rem;
   margin-bottom: 2rem;
@@ -62,13 +62,13 @@ h1 {
   background: none;
   color: #fff;
   width: 50px;
-  border: 1px solid #8758ff;
+  border: 1px solid #124779;
   padding: 0.5rem;
   cursor: pointer;
 }
 
 .todo-btn {
-  background: #4b42f5;
+  background: #124779;
   color: #fff;
   border: none;
   padding: 0.55rem;
@@ -79,7 +79,7 @@ h1 {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #4b42f5;
+  background: #124779;
   color: #fff;
   padding: 0.75rem 1rem;
   border-radius: 5px;
