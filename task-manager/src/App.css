@@ -43,7 +43,7 @@ h1 {
   padding: 0 */
 }
 
-.todo-input {
+.todo-input  {
   outline: none;
   background: none;
   border: 1px solid #124779;
@@ -53,6 +53,31 @@ h1 {
   width: 300px;
   color: #fff;
 }
+
+#priorityLevel {
+    outline: none;
+    background: none;
+    border: 1px solid #124779;
+    padding-top: 0.455rem;
+    padding-bottom: 0.5rem;
+    margin-top: 0rem;
+    margin-bottom: 3rem;
+    width: 150px;
+    color: #fff;
+    
+}
+
+#priorityLevel option {
+  background-color: #1A1A40; /* Background color for options */
+  color: #fff; /* Text color for options */
+  padding: 0.5rem 1rem;
+}
+
+#priorityLevel .High:hover {
+  background-color: red;
+  border: 3px solid pink;
+}
+
 
 .todo-input::placeholder {
   color: #ffffff4d;
@@ -85,6 +110,7 @@ h1 {
   border-radius: 5px;
   margin-bottom: 1rem;
 }
+
 
 .fa-trash {
   margin-left: 0.75rem;

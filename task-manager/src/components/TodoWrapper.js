@@ -9,8 +9,8 @@ export const TodoWrapper = () => {
     const [todos, setTodos] = useState([]);
     const [deleting,setDeleting] = useState(false);
     const [sorting,setSorting] = useState(false);
-    const addTodo = (todo,priority) => {
-        setTodos(todos => [...todos,{priority: priority, id: uuidv4(), task: todo, 
+    const addTodo = (todo,priority, priorityLevel) => {
+        setTodos(todos => [...todos,{priority: priority, priorityLevel: priorityLevel, id: uuidv4(), task: todo, 
         completed: false, 
         isEditing: false}]);
         // console.log(todos);
@@ -29,9 +29,9 @@ export const TodoWrapper = () => {
     const editTodo = (id) => {
       setTodos(todos.map(todo => todo.id === id? {...todo, isEditing: !todo.isEditing} : todo))}
 
-    const editTask = (task,id,priority) => {
+    const editTask = (task,id,priority,priorityLevel) => {
       setTodos(todos.map(todo => todo.id === id? 
-        {...todo, task,priority, isEditing: !todo.isEditing} : todo))
+        {...todo, task,priority,priorityLevel,isEditing: !todo.isEditing} : todo))
     }
 
     useEffect(() => {
@@ -62,7 +62,7 @@ export const TodoWrapper = () => {
        todo.isEditing ? (
         <EditTodoForm editTodo = {editTask} task = {todo}/>
        ) : (
-      <Todo task = {todo} key = {index} priority={todo.priority} toggleComplete={toggleComplete} deleteTodo =
+      <Todo task = {todo} key = {index} priorityLevel= {todo.priorityLevel} priority={todo.priority} toggleComplete={toggleComplete} deleteTodo =
       {deleteTodo} editTodo={editTodo} />  
        )
      ))}

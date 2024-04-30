@@ -7,15 +7,17 @@ export const TodoForm = ({addTodo}) => {
 
     const [value,setValue] = useState("");
     const [priority, setPriority] = useState(1);
+    const [priorityLevel, setPriorityLevel] = useState('Low');
     const [alertIsVisible, setAlertVisble] = useState(false); // State for alert visibility
 
     const handleSubmit = e => {
         e.preventDefault();
         
         if (value !== "" && priority !== undefined) {
-          addTodo(value, priority);
+          addTodo(value, priority, priorityLevel);
           setValue("");
           setPriority(1);
+          setPriorityLevel('Low');
           setAlertVisble(false);
         }else{
           setAlertVisble(true);
@@ -34,6 +36,11 @@ export const TodoForm = ({addTodo}) => {
            value = {value}
            onChange = {(e) => setValue(e.target.value)}
            />
+           <select id="priorityLevel" name="priorityLevel" value= {priorityLevel} onChange = {(e) => setPriorityLevel(e.target.value)}>
+              <option className= "High" value="High">High</option>
+              <option className= "Moderate" value="Moderate">Moderate</option>
+              <option className= "Low" value="Low">Low</option>
+            </select>
          <input type = "number"
           className = "priority-btn"
            min = "1"
