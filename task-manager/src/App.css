@@ -25,15 +25,27 @@ body {
 h1 {
   color: #fff;
   margin-bottom: 0.5rem;
-  font-size: 3rem;
+  font-size: 2rem;
   text-align: center;
 }
 
+@media screen and (max-width: 768px) {
 .TodoWrapper {
   background: #1A1A40;
-  margin-top: 5rem;
-  padding: 2rem;
+  margin-top: 1rem;
+  padding: 0.5rem;
   border-radius: 5px;
+  width: 90vw;
+}
+}
+
+@media screen and (min-width: 1024px) {
+  .TodoWrapper {
+    background: #1A1A40;
+    margin-top: 5rem;
+    padding: 2rem;
+    border-radius: 5px;
+  }
 }
 
 .TodoForm {
@@ -43,6 +55,52 @@ h1 {
   padding: 0 */
 }
 
+@media screen and (max-width: 768px) {
+  .todo-input{
+    outline: none;
+    background: none;
+    border: 1px solid #124779;
+    padding: 0.5rem 1rem;
+    margin-top: 0rem;
+    margin-bottom: 2rem;
+    width: 100%;
+    color: #fff;
+  }
+
+  .todo-btn {
+    background: #124779;
+    color: #fff;
+    border: none;
+    padding: 0.55rem;
+    cursor: pointer;
+    width:30%;
+  }
+
+  #priorityLevel {
+    outline: none;
+    background: none;
+    border: 1px solid #124779;
+    padding-top: 0.455rem;
+    padding-bottom: 0.5rem;
+    margin-top: 0rem;
+    margin-bottom: 3rem;
+    width: 5rem;
+    color: #fff;
+    width: 40%;
+}
+
+.priority-btn {
+  background: none;
+  color: #fff;
+  width: 3rem;
+  border: 1px solid #124779;
+  padding: 0.5rem;
+  cursor: pointer;
+  width: 30%;
+}
+}
+
+@media screen and (min-width: 1024px) {
 .todo-input  {
   outline: none;
   background: none;
@@ -50,8 +108,16 @@ h1 {
   padding: 0.5rem 1rem;
   margin-top: 0rem;
   margin-bottom: 2rem;
-  width: 300px;
+  width: 20rem;
   color: #fff;
+}
+
+.todo-btn {
+  background: #124779;
+  color: #fff;
+  border: none;
+  padding: 0.55rem;
+  cursor: pointer;
 }
 
 #priorityLevel {
@@ -62,10 +128,22 @@ h1 {
     padding-bottom: 0.5rem;
     margin-top: 0rem;
     margin-bottom: 3rem;
-    width: 150px;
-    color: #fff;
-    
+    width: 5rem;
+    color: #fff;   
 }
+
+.priority-btn {
+  background: none;
+  color: #fff;
+  width: 3rem;
+  border: 1px solid #124779;
+  padding: 0.5rem;
+  cursor: pointer;
+}
+
+}
+
+
 
 #priorityLevel option {
   background-color: #1A1A40; /* Background color for options */
@@ -81,23 +159,6 @@ h1 {
 
 .todo-input::placeholder {
   color: #ffffff4d;
-}
-
-.priority-btn {
-  background: none;
-  color: #fff;
-  width: 50px;
-  border: 1px solid #124779;
-  padding: 0.5rem;
-  cursor: pointer;
-}
-
-.todo-btn {
-  background: #124779;
-  color: #fff;
-  border: none;
-  padding: 0.55rem;
-  cursor: pointer;
 }
 
 .Todo {

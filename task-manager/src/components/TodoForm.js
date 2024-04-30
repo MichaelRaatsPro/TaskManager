@@ -27,7 +27,7 @@ export const TodoForm = ({addTodo}) => {
 
   return (
     <>
-    <img src = {header} style = {{width: '420px'}} />
+    {/* <img src = {header} style = {{width: '420px'}} /> */}
     <form className = "TodoForm" onSubmit = {handleSubmit}>
           
           <input type = "textfield" 
