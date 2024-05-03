@@ -63,22 +63,22 @@ export const TodoWrapper = () => {
     return result;
   }
 
+
   useEffect(() => {
-    const storedTasks = Cookies.get('todos');
+    const storedTasks = localStorage.getItem('todos');
     if (storedTasks) {
-        setTodos(JSON.parse(storedTasks));
+      setTodos(JSON.parse(storedTasks));
     }
-}, []);
+  }, [setTodos]);
 
   useEffect(() => {
     if (todos.length > 0) {
       console.log("Current todos: ", todos);
       const expirationDate = new Date();
       expirationDate.setFullYear(expirationDate.getFullYear() + 10); // 10 years from now
-      Cookies.set('todos', JSON.stringify(todos), { expires: expirationDate });
+      localStorage.setItem('todos', JSON.stringify(todos));
     }
   }, [todos]);
-
 
   return (
     <div className = 'TodoWrapper'>
