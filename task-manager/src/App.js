@@ -2,7 +2,7 @@ import './App.css';
 import { TodoWrapper } from './components/TodoWrapper';
 import {useState} from 'react';
 
-document.title = "Task Manager";
+document.title = "To Do Today!";
 function App() {
   return (
       <TodoWrapper/>
